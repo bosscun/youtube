@@ -32,10 +32,7 @@ class index
             $estimateRevenue += $tmp_revenue[0][1];
 
         }
-        $viewsArr = [];
-        $likesArr = [];
-        $subsArr = [];
-        $dateArr = [];
+
 
         if (isset($_GET["action"])) {
 
@@ -43,10 +40,15 @@ class index
 
             switch ($action) {
                 case "search_user":
+
                     $UserIDSearch = isset($_POST["UserIDSearch"]) ? trim($_POST["UserIDSearch"]) : '';
                     $channelReportSearch = $this->m_index->GetChannelAnalysticForSearch($UserIDSearch);
                     $getDate = json_decode($channelReportSearch[0]['MonthlyReport']);
                     $i = 0;
+                    $viewsArr = [];
+                    $likesArr = [];
+                    $subsArr = [];
+                    $dateArr = [];
                     foreach ($getDate as $dt) {
                         $views = 0;
                         foreach ($channelReportSearch as $report) {

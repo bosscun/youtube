@@ -35,7 +35,11 @@ class m_index extends ConnectionDB
 
     public function GetChannelAnalysticForSearch($UserID)
     {
-        $sql = "SELECT ci.ChannelID, ca.Report, ca.MonthlyReport, ca.MonthlyReport,ca.RevenueReport,ca.CreateDate FROM tbl_channelinfo ci  INNER JOIN tbl_analystic ca on ci.ChannelID = ca.ChannelID WHERE ci.AssignToUserID ='$UserID' OR ci.UserID = '$UserID'";
+        if ($UserID) {
+            $sql = "SELECT ci.ChannelID, ca.Report, ca.MonthlyReport, ca.MonthlyReport,ca.RevenueReport,ca.CreateDate FROM tbl_channelinfo ci  INNER JOIN tbl_analystic ca on ci.ChannelID = ca.ChannelID WHERE ci.AssignToUserID ='$UserID' OR ci.UserID = '$UserID'";
+        } else {
+            $sql = "SELECT ci.ChannelID, ca.Report, ca.MonthlyReport, ca.MonthlyReport,ca.RevenueReport,ca.CreateDate FROM tbl_channelinfo ci  INNER JOIN tbl_analystic ca on ci.ChannelID = ca.ChannelID";
+        }
         $rows = ConnectionDB::fetch($sql);
         return $rows;
     }

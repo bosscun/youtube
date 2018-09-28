@@ -80,10 +80,10 @@
                                 <select id="SearchByUserID" name="UserIDSearch"
                                         style="width: 150px; height: 40px; margin: 0">
                                     <?php foreach ($totalActiveUser as $user) { ?>
+                                        <option value="">All</option>
                                         <option value="<?php echo $user['ID']; ?>" <?php echo isset($UserIDSearch) ? ($UserIDSearch == $user['ID'] ? 'selected' : '') : ''; ?>><?php echo $user['UserName'] ?></option>
                                         <?php
                                     } ?>
-                                    <option value="all">All</option>
                                 </select> <br><br>
                                 <button type="submit" class="btn btn-info">Tìm kiếm <i class=" icon-search"></i>
                                 </button>
