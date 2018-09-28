@@ -69,7 +69,7 @@ class index
                     if (file_exists('../views/_layers/l_head.php')) {
                         require_once("../views/_layers/l_head.php");
                     }
-                    if (file_exists('views/_layers/l_header_menu.php')) {
+                    if (file_exists('../views/_layers/l_header_menu.php')) {
                         require_once("../views/_layers/l_header_menu.php");
                     }
                     if (file_exists('../views/_layers/l_left_menu.php')) {
@@ -78,13 +78,14 @@ class index
                     if (file_exists('../views/_layers/l_script.php')) {
                         require_once("../views/_layers/l_script.php");
                     }
-
                     if (file_exists('../views/_layers/l_footer.php')) {
                         require_once("../views/_layers/l_footer.php");
                     }
                     if (file_exists('../views/v_index.php')) {
                         include '../views/v_index.php';
                     }
+
+
                     break;
             }
         } else {
@@ -117,23 +118,20 @@ class index
             if (file_exists('../views/_layers/l_head.php')) {
                 require_once("../views/_layers/l_head.php");
             }
-            if (file_exists('views/_layers/l_header_menu.php')) {
+            if (file_exists('../views/_layers/l_header_menu.php')) {
                 require_once("../views/_layers/l_header_menu.php");
             }
             if (file_exists('../views/_layers/l_left_menu.php')) {
                 require_once("../views/_layers/l_left_menu.php");
             }
-
-            if (file_exists('../views/v_index.php')) {
-                include '../views/v_index.php';
-            }
-
-            if (file_exists('views/_layers/l_footer.php')) {
-                require_once("../views/_layers/l_footer.php");
-            }
-
             if (file_exists('../views/_layers/l_script.php')) {
                 require_once("../views/_layers/l_script.php");
+            }
+            if (file_exists('../views/_layers/l_footer.php')) {
+                require_once("../views/_layers/l_footer.php");
+            }
+            if (file_exists('../views/v_index.php')) {
+                include '../views/v_index.php';
             }
         }
     }
