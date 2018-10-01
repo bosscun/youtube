@@ -51,18 +51,24 @@ class index
                     $dateArr = [];
                     foreach ($getDate as $dt) {
                         $views = 0;
+                        $likes = 0;
+                        $subs = 0;
+                        $dates = 0;
                         foreach ($channelReportSearch as $report) {
                             $getData = json_decode($report['MonthlyReport']);
                             if (count($getData) <= $i)
                                 break;
                             if ($getData[$i][1] != null) {
-                                //$views += $getData[$i][1];
-                                array_push($viewsArr, $getData[$i][1]);
-                                array_push($likesArr, $getData[$i][2]);
-                                array_push($subsArr, $getData[$i][4]);
-                                array_push($dateArr, $getData[$i][0]);
+                                $views += $getData[$i][1];
+                                $likes += $getData[$i][2];
+                                $subs += $getData[$i][4];
+                                $dates = $getData[$i][0];
                             }
                         }
+                        array_push($viewsArr, $views);
+                        array_push($likesArr, $likes);
+                        array_push($subsArr, $subs);
+                        array_push($dateArr, $dates);
                         $i++;
                     }
                     $title = "Quản trị hệ thống";
@@ -100,18 +106,25 @@ class index
             $i = 0;
             foreach ($getDate as $dt) {
                 $views = 0;
+                $likes = 0;
+                $subs = 0;
+                $dates = 0;
                 foreach ($channelReport as $report) {
                     $getData = json_decode($report['MonthlyReport']);
 
                     if (count($getData) <= $i)
                         break;
                     if ($getData[$i][1] != null) {
-                        array_push($viewsArr, $getData[$i][1]);
-                        array_push($likesArr, $getData[$i][2]);
-                        array_push($subsArr, $getData[$i][4]);
-                        array_push($dateArr, $getData[$i][0]);
+                        $views += $getData[$i][1];
+                        $likes += $getData[$i][2];
+                        $subs += $getData[$i][4];
+                        $dates = $getData[$i][0];
                     }
                 }
+                array_push($viewsArr, $views);
+                array_push($likesArr, $likes);
+                array_push($subsArr, $subs);
+                array_push($dateArr, $dates);
                 $i++;
             }
             $title = "Quản trị hệ thống";
