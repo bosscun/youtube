@@ -56,7 +56,6 @@
                         <?php
                         $next = "";
                         foreach ($channelReport as $report) {
-
                             $analytics = json_decode($report['Report']);
                             $revenue = json_decode($report['RevenueReport']);
                             ?>

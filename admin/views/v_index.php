@@ -79,8 +79,8 @@
                             <div class="task-option">
                                 <select id="SearchByUserID" name="UserIDSearch"
                                         style="width: 150px; height: 40px; margin: 0">
+                                    <option value="">All</option>
                                     <?php foreach ($totalActiveUser as $user) { ?>
-                                        <option value="">All</option>
                                         <option value="<?php echo $user['ID']; ?>" <?php echo isset($UserIDSearch) ? ($UserIDSearch == $user['ID'] ? 'selected' : '') : ''; ?>><?php echo $user['UserName'] ?></option>
                                         <?php
                                     } ?>
