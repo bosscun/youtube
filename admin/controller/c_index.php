@@ -62,13 +62,12 @@ class index
                                 $views += $getData[$i][1];
                                 $likes += $getData[$i][2];
                                 $subs += $getData[$i][4];
-                                $dates = $getData[$i][0];
                             }
                         }
                         array_push($viewsArr, $views);
                         array_push($likesArr, $likes);
                         array_push($subsArr, $subs);
-                        array_push($dateArr, $dates);
+                        array_push($dateArr, $dt[0]);
                         $i++;
                     }
                     $title = "Quản trị hệ thống";
@@ -118,15 +117,15 @@ class index
                         $views += $getData[$i][1];
                         $likes += $getData[$i][2];
                         $subs += $getData[$i][4];
-                        $dates = $getData[$i][0];
                     }
                 }
                 array_push($viewsArr, $views);
                 array_push($likesArr, $likes);
                 array_push($subsArr, $subs);
-                array_push($dateArr, $dates);
+                array_push($dateArr, $dt[0]);
                 $i++;
             }
+
             $title = "Quản trị hệ thống";
             if (file_exists('../views/_layers/l_head.php')) {
                 require_once("../views/_layers/l_head.php");
