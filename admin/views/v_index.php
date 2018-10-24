@@ -148,6 +148,8 @@
                 <script type="text/javascript">
                     $(function () {
                         var views = <?php echo json_encode($viewsArr); ?>;
+                        var subs = <?php echo json_encode($subsArr); ?>;
+                        var likes = <?php echo json_encode($likesArr); ?>;
                         var date = <?php echo json_encode($dateArr); ?>;
                         var myChart1 = Highcharts.chart('analytic_chart_view', {
                             chart: {
@@ -173,76 +175,13 @@
                             series: [{
                                 name: 'views',
                                 data: views
-                            }]
-                        });
-                    });
-                </script>
-            </div>
-            <div>
-                <div id="analytic_chart_sub" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-                <script type="text/javascript">
-                    $(function () {
-                        var subs = <?php echo json_encode($subsArr); ?>;
-                        var date = <?php echo json_encode($dateArr); ?>;
-                        var myChart = Highcharts.chart('analytic_chart_sub', {
-                            chart: {
-                                type: 'line'
-                            },
-                            title: {
-                                text: ""
-                            },
-                            xAxis: {
-                                "type": "datetime",
-                                "labels": {
-                                    "format": "{value:%b %d}"
-                                },
-                                categories: date
-
-                            },
-
-                            yAxis: {
-                                title: {
-                                    text: ''
-                                }
-                            },
-                            series: [{
-                                name: 'sub',
-                                data: subs
-                            }]
-                        });
-                    });
-                </script>
-            </div>
-            <div>
-                <div id="analytic_chart_like" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-                <script type="text/javascript">
-                    $(function () {
-                        var likes = <?php echo json_encode($likesArr); ?>;
-                        var date = <?php echo json_encode($dateArr); ?>;
-                        var myChart = Highcharts.chart('analytic_chart_like', {
-                            chart: {
-                                type: 'line'
-                            },
-                            title: {
-                                text: ""
-                            },
-                            xAxis: {
-                                "type": "datetime",
-                                "labels": {
-                                    "format": "{value:%b %d}"
-                                },
-                                categories: date
-
-                            },
-
-                            yAxis: {
-                                title: {
-                                    text: ''
-                                }
-                            },
-                            series: [{
-                                name: 'likes',
+                            },{
+                                name: 'like',
                                 data: likes
+                            },
+                            {
+                                name: 'subs',
+                                data: subs
                             }]
                         });
                     });
