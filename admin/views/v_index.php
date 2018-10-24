@@ -140,10 +140,10 @@
                 <!--work progress end-->
             </div>
         </div>
-
         <div class="panel-body">
+            <strong> Thống kê từ ngày <?php echo $dateArr[0]." đến ".$dateArr[count($dateArr) -1]?> </strong>
+            <br><br><br>
             <div id="analytic_chart_view" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
             <div>
                 <script type="text/javascript">
                     $(function () {
