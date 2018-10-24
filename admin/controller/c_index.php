@@ -56,7 +56,7 @@ class index
                         $dates = 0;
                         foreach ($channelReportSearch as $report) {
                             $getData = json_decode($report['MonthlyReport']);
-                            if (count($getData) <= $i)
+                    if (isset($getData) && count($getData) <= $i)
                                 break;
                             if ($getData[$i][1] != null) {
                                 $views += $getData[$i][1];
