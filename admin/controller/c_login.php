@@ -35,7 +35,7 @@ class c_login
                                 $_SESSION["Role"] = $row["Role"];
                                 $_SESSION['CreateUserId']=$row["CreateUserId"];
                                if($row["Role"]==1)
-                                header("location: c_index.php");
+                                header("location: c_channel.php");
                                else
                                 header("location: c_channel.php");
 

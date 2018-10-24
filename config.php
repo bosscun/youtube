@@ -1,9 +1,8 @@
 <?php
 
-define( 'BASE_PATH', 'http://localhost/youtube/');
-//define( 'REDIRECT_URI', 'http://vfastsoft.com/youtube/admin/controller/c_channel.php?controller=channel&action=channel_add_view');
-define( 'REDIRECT_URI', 'http://localhost/youtube/admin/controller/c_channel.php?controller=channel&action=channel_add_view');
+define( 'BASE_PATH', 'http://autosunnymedia.online/youtube/');
 
+define( 'REDIRECT_URI', 'http://autosunnymedia.online/youtube/admin/controller/c_channel.php?controller=channel&action=channel_add_view');
 
 //define('DB_USERNAME', 'duydn');
 //define('DB_PASSWORD', '123456a@');
@@ -13,7 +12,7 @@ define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_HOST', 'localhost');
 
-define('DB_NAME', 'youtube_sytem_vfast');
+define('DB_NAME', 'youtube_system');
 
 	class ConnectionDB
 	{		
@@ -24,16 +23,16 @@ define('DB_NAME', 'youtube_sytem_vfast');
 			$this->db = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);	
 			mysqli_query($this->db,"SET NAMES UTF8");
 		}
-        public function fetch($sql)//list du lieu
-        {
-            $result=mysqli_query($this->db,$sql);
-            $arr_fetch=array();
-            while($rows=mysqli_fetch_array($result))
-            {
-                $arr_fetch[]=$rows;
-            }
-            return $arr_fetch;
-        }
+		public function fetch($sql)//list du lieu
+		{
+			$result=mysqli_query($this->db,$sql);
+			$arr_fetch=array();
+			while($rows=mysqli_fetch_array($result))
+			{
+				$arr_fetch[]=$rows;
+			}
+			return $arr_fetch;
+		}
 		public function num_rows($sql)
 		{
 			$result = mysqli_query($this->db,$sql);

@@ -3,14 +3,7 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-                  <?php if  ($_SESSION["Role"]== "1")  { ?>
-                  <li>
-                      <a href="<?php echo BASE_PATH?>admin/controller/c_index.php" class="<?php if($main_menu=="dashboard"){echo "active";}?>">
-                          <i class="icon-dashboard"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
-                  <?php }?>
+                  
                    <?php if  ($_SESSION["Role"]== "1" ||$_SESSION["Role"]== "2")  { ?>
                       <li class="sub-menu" >
                           <a href="javascript:;" class="<?php if($main_menu=="admin"){echo "active";}?>">

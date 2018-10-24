@@ -58,7 +58,7 @@
                         $refreshToken = $token['RefreshToken'];
                         $jsonPath = "../YoutubeApi/ClientSecretFile/" . basename(dirname($channel['FromJsonFile'])) . "/" . "client_secret.json";
                         if (!file_exists($destination_path . "/" . $ChannelID)) {
-                            mkdir($destination_path . "/" . $ChannelID, 700);
+                            mkdir($destination_path . "/" . $ChannelID, 0777);
                             copy($jsonPath, $destination_path . "/" . $ChannelID . "/" . basename($jsonFile));
                             $apikey = "{\"access_token\":\"$accessToken\",\"token_type\":\"Bearer\",\"expires_in\":3600,\"created\":1528072583,\"refresh_token\":\"$refreshToken\"}";
                             $tokenName = "Google.Apis.Auth.OAuth2.Responses.TokenResponse-channel";
