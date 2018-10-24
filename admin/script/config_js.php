@@ -49,7 +49,7 @@
         }
         if (document.getElementById("ReupFromLinkAdd").checked)
         {
-            if ((url.includes("https://www.youtube.com/channel/")==false)||("https://www.youtube.com/user/"))
+            if ((url.includes("https://www.youtube.com/channel/")==false))
             {
                 alert("Link channel không đúng định dạng");
                 e.preventDefault();
